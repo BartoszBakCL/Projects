@@ -1,5 +1,4 @@
-footer {
-  display: flex;
-  height: 50px;
-  border: 1px solid blue;
-}
+@import "generic/reset";
+
+@import "settings/constants";
+@import "settings/common";
