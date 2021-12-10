@@ -1,23 +1,26 @@
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router";
+import Menu from "./components/common/Menu";
 import Home from "./components/pages/Home";
-//import Contact from "./components/pages/Contact";
-//import About from "./components/pages/About";
-import CustomMenu from "./components/common/CustomMenu";
-import Container from '@mui/material/Container';
-import Footer from "./components/common/Footer";
+import Login from "./components/pages/Login"
+import Register from "./components/pages/Register"
+import Logout from "./components/pages/Logout"
 
 function App() {
   return (
-    <BrowserRouter>
-            <CustomMenu />
-            <Routes>
-                <Route exact path="/" element={<Home />}/>
-                {/*<Route exact path="/kontakt" element={<Contact />}/>*/}
-                {/*<Route exact path="/onas" element={<About />}/>*/}
-            </Routes>
-            <Footer />
-    </BrowserRouter>
+      <>
+          <BrowserRouter>
+              <Menu/>
+              <Routes>
+                  {/*<Route component={NotFound} />*/}
+                  <Route exact path="/" element={<Home/>}/>
+                  <Route exact path="/oddaj-rzeczy" element={<Home/>}/>
+                  <Route exact path="/logowanie" element={<Login/>}/>
+                  <Route exact path="/rejestracja" element={<Register/>}/>
+                  <Route exact path="/wylogowano" element={<Logout/>}/>
+              </Routes>
+          </BrowserRouter>
+      </>
   );
 }
 
