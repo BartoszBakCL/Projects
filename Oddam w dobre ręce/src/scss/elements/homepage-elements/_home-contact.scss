@@ -6,3 +6,19 @@
           ),
           url("../../../assets/Background-Contact-Form.jpg");
 }
+.contact__footer {
+  display: flex;
+  justify-content: space-between;
+  width: 1220px;
+  margin: 0 auto;
+  .footer__social {
+    display: flex;
+    gap: 15px;
+  }
+  small {
+    font-size: 0.8rem;
+  }
+  img {
+    width: 20px;
+  }
+}
