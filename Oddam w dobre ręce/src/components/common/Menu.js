@@ -1,6 +1,8 @@
 import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import {Link} from "react-router-dom";
+import ScrollLink from "./Scrolling";
+
 
 export default function BasicMenu() {
 
@@ -15,11 +17,11 @@ export default function BasicMenu() {
                             {/*<MenuItem className="list__element"><Link to="/wylogowano">Logout</Link> </MenuItem>*/}
                         </ul>
                         <ul className="nav__list2">
-                            <MenuItem className="list__element"><Link to="/oddaj-rzeczy">Start</Link> </MenuItem>
-                            <MenuItem className="list__element"><Link to="/oddaj-rzeczy">O co chodzi?</Link> </MenuItem>
-                            <MenuItem className="list__element"><Link to="/oddaj-rzeczy">O nas</Link> </MenuItem>
-                            <MenuItem className="list__element"><Link to="/oddaj-rzeczy">Fundacja i organizacje</Link> </MenuItem>
-                            <MenuItem className="list__element"><Link to="/oddaj-rzeczy">Kontakt</Link> </MenuItem>
+                            <MenuItem className="list__element"><Link to="/">Start</Link> </MenuItem>
+                            <MenuItem className="list__element"><ScrollLink path="about-app" text="O co chodzi?"></ScrollLink></MenuItem>
+                            <MenuItem className="list__element"><ScrollLink path="about-us" text="O nas"></ScrollLink></MenuItem>
+                            <MenuItem className="list__element"><ScrollLink path="" text="Fundacja i organizacje"></ScrollLink></MenuItem>
+                            <MenuItem className="list__element"><ScrollLink path="" text="Kontakt"></ScrollLink></MenuItem>
 
                         </ul>
                     </nav>

@@ -1,0 +1,23 @@
+.about-us {
+  display: flex;
+  .about-us__img {
+    width: 50vw;
+  }
+  .about-us__content {
+    background: $color-bg-white;
+    padding: 0 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .content__text {
+      font-size: 1.2rem;
+      line-height: 1.9rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    img {
+      align-self: flex-end;
+    }
+  }
+}
