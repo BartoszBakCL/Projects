@@ -1,5 +1,6 @@
 body {
   font-family: $font-base;
+  font-weight: 300;
 }
 
 a {
@@ -8,7 +9,34 @@ a {
   font-family: $font-base !important;
 }
 
-button {
+.button {
   border: 1px solid black;
   color: $color-text;
+  display: inline-block;
+  background: #fff;
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  font-weight: 250;
+  text-align: center;
+  margin: 10px;
+
+  span {
+    display: inline-block;
+    width: 130px;
+
+  }
+}
+
+
+.title {
+  display: grid;
+  place-items: center;
+  row-gap: 20px;
+  padding-bottom: 30px;
+  .title__text {
+    font-size: 1.5rem;
+  }
+  .title__img {
+    width: 200px;
+  }
 }

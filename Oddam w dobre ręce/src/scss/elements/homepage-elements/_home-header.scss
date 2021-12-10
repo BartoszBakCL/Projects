@@ -30,14 +30,19 @@
   }
 
   .homeheader__btns {
-    button {
+    .button {
+      display: inline-block;
       background: #fff;
-      padding: 10px 15px;
+      padding: 10px 30px;
       font-size: 1.3rem;
       font-weight: 250;
       text-align: center;
-      width: 200px;
       margin: 10px;
+      span {
+        display: inline-block;
+        width: 130px;
+
+      }
     }
   }
 }
