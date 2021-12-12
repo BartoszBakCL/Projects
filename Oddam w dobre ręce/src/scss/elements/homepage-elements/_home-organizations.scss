@@ -1,0 +1,57 @@
+.organization {
+  width: 1100px;
+  margin: 0 auto;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 60px;
+  span {
+    margin: 7px 0;
+  }
+  .organization__button {
+    display: flex;
+    justify-content: center;
+  }
+  .button {
+    font-weight: 300;
+    border: none;
+    width: 200px;
+    padding: 9px 29px;
+    &:focus {
+      border: 1px solid $color-text-light;
+    }
+  }
+  .list__element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid $color-text-light;
+  }
+  .organizations__content {
+    width: 450px;
+    line-height: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  .list__element:last-child {
+    border-bottom: none;
+  }
+  .element__field {
+    display: flex;
+    flex-direction: column;
+  }
+  .element__field span:nth-child(1) {
+    font-size: 1.2rem;
+  }
+  .element__field span:nth-child(2), {
+    font-size: 0.7rem;
+  }
+  div:nth-child(2) > span {
+
+    font-size: 0.8rem;
+  }
+}
