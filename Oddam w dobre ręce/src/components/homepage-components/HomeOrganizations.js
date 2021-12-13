@@ -1,57 +1,90 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Title from "../common/Title";
+import PropTypes from 'prop-types';
 import {foundations} from "../../data/organizacjeifundajce";
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
+function TabPanel (props) {
+    const { children, value, index, ...other } = props;
 
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
 
- const HomeOrganizations = () => {
-     const [isShow, setIsShow] = useState(true);
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
 
-     const handleClick = () => {
-         setIsShow(!isShow);
-     };
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
 
-     useEffect( () => {
-        document.querySelector("#organizations > div.organization__button > button:nth-child(1)").focus();
-    });
-    // const checkActive = () => {
-    //      const checkActiveInterwal = setInterval(() => {
-    //          // const ActiveElement = document.activeElement;
-    //          console.log(document.activeElement);
-    //          }, 500);
-    //  }
+  const HomeOrganizations = () => {
 
-     const ActiveElement = document.activeElement.innerHTML;
-     // onLoad={checkActive}
+      const [value, setValue] = useState(0);
+
+      const handleChange = (event, newValue) => {
+          setValue(newValue);
+      };
+
     return (
         <section className="organization" id="organizations">
             <Title title="Komu pomogamy?"/>
-            <div className="organization__button">
-                <button className="button" onClick={handleClick }>Fundacjom</button>
-                <button className="button" onClick={handleClick}>Organizacjom pozarządowym</button>
-                <button className="button" onClick={handleClick}>Lokalnym zbiórkom</button>
-            </div>
-            {/*<div>111</div>*/}
-            {/*{ActiveElement == "Fundacjom" ? <div>tak</div> : null}*/}
-            {/*{ActiveElement == "Organizacjom pozarządowym" ? <div>tak222</div> : null}*/}
-            {/*{ActiveElement == "Lokalnym zbiórkom" ? <div>tak2223</div> : null}*/}
-            <p className="organizations__content">
-                W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
-            </p>
-            <ul>
-                {foundations.map((elem, index) => {
-                    return <li className="list__element" key={index}>
-                        <div className="element__field">
-                            <span>{elem.name}</span>
-                            <span>{elem.aim}</span>
-                        </div>
-                        <div>
-                            <span>{elem.donation}</span>
-                        </div>
-                    </li>
-                })}
-            </ul>
 
+            <Box sx={{ width: '100%' }}>
+                <Box sx={{ border: 1, borderColor: 'divider' }}>
+                    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                        <Tab label="Fundacjom" {...a11yProps(0)} />
+                        <Tab label="Organizacjom pozarządowym" {...a11yProps(1)} />
+                        <Tab label="Lokalnym zbiórkom" {...a11yProps(2)} />
+                    </Tabs>
+                </Box>
+                <TabPanel value={value} index={0}>
+                    <p className="organizations__content">
+                        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+                    </p>
+                    <ul>
+                        {foundations.map((elem, index) => {
+                            return <li className="list__element" key={index}>
+                                <div className="element__field">
+                                    <span>{elem.name}</span>
+                                    <span>{elem.aim}</span>
+                                </div>
+                                <div>
+                                    <span>{elem.donation}</span>
+                                </div>
+                            </li>
+                        })}
+                    </ul>
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    Item Two
+                </TabPanel>
+                <TabPanel value={value} index={2}>
+                    Item Three
+                </TabPanel>
+            </Box>
         </section>
     );
 };
