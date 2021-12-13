@@ -1,15 +1,15 @@
 import React from 'react';
-import Title from "../common/Title";
-import shirt from "../../assets/Icon-1.svg"
-import bag from "../../assets/Icon-2.svg"
-import magnifier from "../../assets/Icon-3.svg"
-import reload from "../../assets/Icon-4.svg"
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import Title from "../../common/Title";
+import shirt from "../../../assets/Icon-1.svg"
+import bag from "../../../assets/Icon-2.svg"
+import magnifier from "../../../assets/Icon-3.svg"
+import reload from "../../../assets/Icon-4.svg"
 
 const HomeAboutApp = () => {
     return (
         <section id="about-app">
-        <Title title={"Wystarczą 4 proste kroki"}/>
+        <Title title={"Wystarczą 4 proste kroki"} />
         <div className="about-app">
             <div className="about-app-container">
                 <div className="about-app-content">

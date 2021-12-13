@@ -11,7 +11,7 @@ const Login = () => {
                     <label htmlFor="email">Email</label>
                     <input name="email" className="login__input" type="email" />
                     <label htmlFor="password">Hasło</label>
-                    <input name="password" className="login__input" type="password" />
+                    <input name="password" className="login__input" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
                 </div>
                 <div className="login__btns">
                     <Link to="/rejestracja" className="login__btn">Załóż konto</Link>
