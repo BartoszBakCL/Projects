@@ -8,6 +8,7 @@ import {organizations} from "../../../../data/organizacjeifundajce";
 import {foundraising} from "../../../../data/organizacjeifundajce";
 
 
+
 const HomeOrganizations = () => {
     const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {
